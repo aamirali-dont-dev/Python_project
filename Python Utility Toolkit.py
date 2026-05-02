@@ -88,3 +88,66 @@ def factor_finder():
         if x % i == 0:
             print(i, "is a factor")
 
+# 7. GCD & LCM
+
+def GCDandLCM():
+
+    a = int(input("Enter 1st number: "))
+    b = int(input("Enter 2nd number: "))
+    
+    v = a
+    x = b
+
+    if a < b:
+        a, b = b, a
+
+    while b != 0:
+
+        r = a % b
+    
+        a, b = b, r
+
+    print(a, "is the GCD of the two numbers")
+
+    lcm = (v * x) // a
+    print(lcm, "is the LCM of the two numbers")
+
+# 8. Even or Odd
+def even_odd():
+    n = int(input("Enter a number: "))
+
+    if n % 2 == 0:
+        print(n, "is even")
+    else:
+        print(n, "is odd")
+
+# 9. Prime or Composite
+def primeandcomposite():
+    n = float(input("Enter a number: "))
+    
+    s_n = n ** 0.5
+    s_n = int(s_n)
+    for i in range(2, s_n):
+        if n % i == 1:
+            print(n, "is prime")
+            break
+        else:
+            print(n, "is composite")
+            break
+
+# 10. Decimal to Binary, Binary to Decimal
+def dec_bin():
+    bin = []
+    n = int(input("Enter a decimal number: "))
+    
+    while n > 0:
+        r = n % 2
+        bin.append(r)
+        n = n // 2
+    bin.reverse()
+    print(bin)
+
+dec_bin()
+
+    
+
