@@ -197,9 +197,6 @@ def num_name():
         ans.append(names[int(digit)])
 
     print(" ".join(ans))
-num_name()
-
-# INCOMPLETED
 
 # 13. Smallest in an Array
 def smallest_in_array():
@@ -263,12 +260,45 @@ def student_record():
     record = {}
     n = int(input("How many students? "))
 
+    # Student Record Loop
     for i in range(n):
         name = input("Enter student name: ")
-        grade = input("Enter student grade: ")
+        name = name.lower()
+        grade = (input("Enter student grade: "))
         record[name] = grade
 
     print(record)
+
+    # Search Loop
+    s = input("Enter a name to search for: ")
+    s = s.lower()
+
+    # for kiran if s in record:
+        #print(s, "has grade: ", record[s])
+    
+    if s in record:
+        print(s, "has grade: ", record[s])
+    else:
+        print(s, "not found")
+
+    # Average Grade
+    total = 0
+    for grade in record.values():
+        total += int(grade)
+    avg = total / len(record)
+    print("Average grade: ", avg)
+
+    # Highest Grade
+
+    highest = 0
+    high_name = ""
+    for name, grade in record.items():
+        if int(grade) > highest:
+            high_name = name
+            highest = int(grade)
+    print("Highest grade: ", highest, "by ", high_name)
+
+student_record()
 
 def menu():
     print("Welcome to the Python Utility Toolkit!")
@@ -336,4 +366,3 @@ def menu():
         elif choice == 20:
             print("Exiting...")
             break
-menu()
